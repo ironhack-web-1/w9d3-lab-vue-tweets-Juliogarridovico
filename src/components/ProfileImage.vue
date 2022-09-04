@@ -1,10 +1,10 @@
 <template>
 <img
-:src="patata.user.image"
+:src="patata.image"
 className="profile"
 alt="profile"
 />
-    <p>dd</p>
+    
 
 </template>
 
@@ -14,7 +14,7 @@ export default {
         
     },
     props: {
-    test: String
+    patata: String
   },
 }
 </script>

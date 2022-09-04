@@ -1,33 +1,14 @@
 <template>
   <div className="tweet">
-    <img
-      :src="patata.user.image"
-      className="profile"
-      alt="profile"
-    />
+ <profileImage :patata="patata.user"></profileImage>
 
     <div className="body">
-      <div className="top">
-        <span className="user">
-          <span className="name"> {{patata.user.name}}</span>
-          <span className="handle">{{patata.user.handle}}</span>
-        </span>
-
-        <span className="timestamp">{{patata.timestamp}}</span>
-      </div>
-
-      <p className="message">
-        
-        {{patata.message}}
-      </p>
-
-      <div className="actions">
-        <!-- Font Awesome icons -->
-        <i class="far fa-comment"></i>
-        <i class="fas fa-retweet"></i>
-        <i class="far fa-heart"></i>
-        <i class="fas fa-share"></i>
-      </div>
+     
+      <user :patata="patata"></user>
+      
+      <message :patata="patata"></message>
+      <action></action>
+      
     </div>
 
     <i class="fas fa-ellipsis-h"></i>
@@ -35,14 +16,21 @@
 
 </template>
 <script>
-
-
+import profileImage from './ProfileImage.vue'
+import User from './User.vue'
+import message from './Message.vue'
+import action from './Actions.vue'
 export default {
     props:{
       patata: Object
+        
     },
+    components: {profileImage, User,message,action},
     data() {
-      return {}}}
+      return {}}
+    
+    }
+
 </script>
 
 <style scoped>

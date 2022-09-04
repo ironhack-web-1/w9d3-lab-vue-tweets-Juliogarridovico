@@ -1,6 +1,6 @@
 <template>
       <p className="message">
-        
+       
         {{patata.message}}
       </p>
 
